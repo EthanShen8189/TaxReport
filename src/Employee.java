@@ -1,3 +1,4 @@
+import java.util.*;
 /**
  * Created by Racoonsy on 15-03-12.
  */
@@ -66,5 +67,12 @@ public class Employee {
         annualSalary = hourlyWage*hoursWorked*52;
     }
 
+    Scanner fileReader = new Scanner("comp249-payroll.txt");
+
+    public void readFile(){
+        while(fileReader.hasNext()){
+
+        }
+    }
 
 }
