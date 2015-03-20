@@ -1,12 +1,13 @@
-/**
- * Created by Racoonsy on 15-03-12.
+/** COMP249 Assignment 3
+ *  Author: Yang Shen(7159390)
+ *  Due : 2015/03/20
  */
 public class ProvincialTax extends Deduction {
 
-    private double provincialTaxDeduction;
+    protected static double provincialTaxDeduction;
 
-    @Override
-    public double calculateTax(Employee e) {
+
+    public static double calculateProvincialTax(Employee e) {
         if(e.getAnnualSalary() <= 41495)
             provincialTaxDeduction = e.getAnnualSalary()*0.16;
 
@@ -22,4 +23,8 @@ public class ProvincialTax extends Deduction {
         return provincialTaxDeduction;
     }
 
+    @Override
+    public double calculateTax() {
+        return 0;
+    }
 }

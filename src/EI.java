@@ -1,12 +1,13 @@
-/**
- * Created by Racoonsy on 15-03-12.
+/** COMP249 Assignment 3
+ *  Author: Yang Shen(7159390)
+ *  Due : 2015/03/20
  */
 public class EI extends Deduction {
 
-    private double eiDeduction;
+    protected static double eiDeduction;
 
-    @Override
-    public double calculateTax(Employee e) {
+
+    public static double calculateEI(Employee e) {
 
         if(e.getAnnualSalary() >= 48600)
             eiDeduction = 743.58;
@@ -14,6 +15,11 @@ public class EI extends Deduction {
         else
             eiDeduction = (int)(e.getAnnualSalary()/100)*1.53;
 
+        return eiDeduction;
+    }
+
+    @Override
+    public double calculateTax() {
         return eiDeduction;
     }
 }

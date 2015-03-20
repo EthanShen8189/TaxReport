@@ -1,12 +1,13 @@
-/**
- * Created by Racoonsy on 15-03-12.
+/** COMP249 Assignment 3
+ *  Author: Yang Shen(7159390)
+ *  Due : 2015/03/20
  */
 public class RRQ extends Deduction {
 
-    private double rrqDeduction;
+    protected static double rrqDeduction;
 
-    @Override
-    public double calculateTax(Employee e) {
+
+    public static double calculateRRQTax(Employee e) {
         if(e.getAnnualSalary() >= 52500)
             rrqDeduction = 2535.75;
         else
@@ -14,5 +15,10 @@ public class RRQ extends Deduction {
 
         return rrqDeduction;
 
+    }
+
+    @Override
+    public double calculateTax() {
+        return 0;
     }
 }

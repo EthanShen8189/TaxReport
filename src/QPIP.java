@@ -1,12 +1,12 @@
-/**
- * Created by Racoonsy on 15-03-12.
+/** COMP249 Assignment 3
+ *  Author: Yang Shen(7159390)
+ *  Due : 2015/03/20
  */
 public class QPIP extends Deduction {
 
-    private double qpipDeduction;
+    protected static double qpipDeduction;
 
-    @Override
-    public double calculateTax(Employee e) {
+    public static double calculateQPIPTax(Employee e) {
 
         if(e.getAnnualSalary() >= 69000)
             qpipDeduction = 385.71;
@@ -15,5 +15,10 @@ public class QPIP extends Deduction {
             qpipDeduction = e.getAnnualSalary() * 0.00559;
 
         return qpipDeduction;
+    }
+
+    @Override
+    public double calculateTax() {
+        return 0;
     }
 }
